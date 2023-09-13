@@ -1,0 +1,13 @@
+services:
+  frontend:
+    image: kota661/frontend:latest
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:3000/healthz # service名:Container側のポート
+  backend:
+    image: kota661/backend:latest
+    build: ./backend
+    ports:
+      - "4000:3000"
