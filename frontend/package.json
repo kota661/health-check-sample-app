@@ -1,0 +1,14 @@
+
+{
+  "name": "frontend-app",
+  "version": "1.0.0",
+  "description": "Health check sample app - front",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "satokota",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+  
+}

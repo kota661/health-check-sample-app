@@ -1,0 +1,21 @@
+services:
+  frontend:
+    image: docker.io/kota661/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      x-bake:
+        platforms:
+          - linux/amd64
+          - linux/arm64
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:3000/healthz # service名:Container側のポート
+  backend:
+    image: docker.io/kota661/backend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:3000"
